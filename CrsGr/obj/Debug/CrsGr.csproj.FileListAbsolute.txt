@@ -1,0 +1,11 @@
+C:\Users\Лиза\source\repos\CrsGr\bin\Debug\CrsGr.exe.config
+C:\Users\Лиза\source\repos\CrsGr\bin\Debug\CrsGr.exe
+C:\Users\Лиза\source\repos\CrsGr\bin\Debug\CrsGr.pdb
+C:\Users\Лиза\source\repos\CrsGr\obj\Debug\CrsGr.Form1.resources
+C:\Users\Лиза\source\repos\CrsGr\obj\Debug\CrsGr.Properties.Resources.resources
+C:\Users\Лиза\source\repos\CrsGr\obj\Debug\CrsGr.csproj.GenerateResource.cache
+C:\Users\Лиза\source\repos\CrsGr\obj\Debug\CrsGr.csproj.CoreCompileInputs.cache
+C:\Users\Лиза\source\repos\CrsGr\obj\Debug\CrsGr.exe
+C:\Users\Лиза\source\repos\CrsGr\obj\Debug\CrsGr.pdb
+C:\Users\Лиза\source\repos\CrsGr\obj\Debug\CrsGr.Form2.resources
+C:\Users\Лиза\source\repos\CrsGr\obj\Debug\CrsGr.csprojAssemblyReference.cache
