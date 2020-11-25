@@ -18,7 +18,7 @@ namespace CrsGr
     {
 
         int size;
-
+      
         public Form1()
         {
             InitializeComponent();
@@ -94,10 +94,11 @@ namespace CrsGr
             int color = 1;
             exit[w] = color;
             int e = 0;
+        
             while (vertex.Count != 0)
             {
                 for (int i = 0; i < size; i++)
-                {
+                { 
                     for (int j = 0; j < size; j++)
                     {
                         if (M[w, j] == 0 && exit[j] == 0)
@@ -106,12 +107,13 @@ namespace CrsGr
                             e = exit[j];
                         }
                     }
+                    
                 }
                 w = vertex.Dequeue();
                 color++;
             }
             label3.Text = "";
-            label3.Text += "Colour: ";
+            label3.Text += "Color: ";
             for (int i = 0; i < size; i++)
             {
                     label3.Text +=+exit[i];
@@ -145,25 +147,25 @@ namespace CrsGr
         private void Button3_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();
-            string records = File.ReadAllText("file.txt");
+            string records = File.ReadAllText("D:/file.txt");
             form2.setTextToRich(records);
             form2.Show();
         }
 
-        public void saveRecords(int [,]M,int[]exit,int chrom)
+        public void saveRecords(int[,] M, int[] exit, int chrom)
         {
             DateTime now = DateTime.Now;
-            StreamWriter file = new StreamWriter("file.txt", true);
+            StreamWriter file = new StreamWriter("D:/file.txt", true);
             try
             {
-                file.Write(("Date:  "+ now.ToString("F"))+"\n");
+                file.Write(("Date:  " + now.ToString("dd MMMM yyyy HH.mm.ss")) + "\n");
                 file.Write("Size:  " + size + "  \n");
                 file.Write("Matrix:   \n");
                 for (int i = 0; i < size; i++)
                 {
                     for (int j = 0; j < size; j++)
                     {
-                        file.Write(M[i,j]+ "  ");
+                        file.Write(M[i, j] + "  ");
                     }
                     file.Write("\n");
                 }
@@ -175,14 +177,49 @@ namespace CrsGr
                     file.Write(exit[i] + "  ");
                 }
                 file.Write("\n");
-                file.Write("Сhromatic number:  "+chrom);
-
+                file.Write("Сhromatic number:  " + chrom);
                 file.Write("\n\n\n");
             }
+
             finally
             {
                 file.Flush();
                 file.Close();
+            }
+
+
+            string s = DateTime.Now.ToString("dd MMMM yyyy HH.mm.ss");
+            StreamWriter save = new StreamWriter(s+".txt", true);
+            try
+            {
+                for (int i = 0; i < size; i++)
+                {
+                    for (int j = 0; j < size; j++)
+                    {
+                        save.Write(M[i, j] );
+                        if (j == size - 1) {
+                            continue;
+                        }
+                        else
+                        {
+                            save.Write(" ");
+                        }   
+                    }
+                    if (i == size - 1)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        save.Write("\n");
+                    }   
+                }
+            }
+
+            finally
+            {
+                save.Flush();
+                save.Close();
             }
         }
 
@@ -197,7 +234,39 @@ namespace CrsGr
             }
             label8.Text = "";
             label8.Text = "Сhromatic number: " + chrom;
+
+            label9.Text = "";
+            int cl = 0;
+            for (int i = 0; i < chrom; i++)
+            {
+                cl++;
+                label9.Text += "Color "+cl+": ";
+                for (int j = 0; j < size; j++)
+                {
+                    if (exit[j] == cl)
+                    {
+                        label9.Text +=  j ;  
+                    }    
+                }
+                label9.Text += "\n";
+            }
             saveRecords(M, exit, chrom);
+        }
+
+
+        private void Button4_Click_1(object sender, EventArgs e)
+        {
+           string name = textBox2.Text+".txt";
+            if (!(File.Exists(name)))
+            {
+                MessageBox.Show("Input Error.\nTry again");
+            }
+            else
+            {
+                string soxr = File.ReadAllText(name);
+                richTextBox1.Text = soxr;
+            }
+            textBox2.Clear();
         }
     }
 }   

@@ -9,3 +9,6 @@ C:\Users\Лиза\source\repos\CrsGr\obj\Debug\CrsGr.exe
 C:\Users\Лиза\source\repos\CrsGr\obj\Debug\CrsGr.pdb
 C:\Users\Лиза\source\repos\CrsGr\obj\Debug\CrsGr.Form2.resources
 C:\Users\Лиза\source\repos\CrsGr\obj\Debug\CrsGr.csprojAssemblyReference.cache
+C:\Users\Лиза\source\repos\CrsGr\bin\Debug\en\CrsGr.resources.dll
+C:\Users\Лиза\source\repos\CrsGr\obj\Debug\CrsGr.Form1.en.resources
+C:\Users\Лиза\source\repos\CrsGr\obj\Debug\en\CrsGr.resources.dll
