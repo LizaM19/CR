@@ -16,8 +16,8 @@ namespace CrsGr
         public Form2()
         {
             InitializeComponent();
+            
         }
-
         public void setTextToRich(String text)
         {
             richTextBox1.Text = text;
@@ -25,7 +25,18 @@ namespace CrsGr
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            File.WriteAllText("file.txt", string.Empty);
+            File.WriteAllText("D:/file.txt", string.Empty);
+            DirectoryInfo Dr = new DirectoryInfo(@"C:\Users\Лиза\source\repos\CrsGr\bin\Debug");
+            FileInfo[] files = Dr.GetFiles("*.txt").Where(p => p.Extension == ".txt").ToArray();
+            foreach (FileInfo file in files)
+                try
+                {
+                    file.Attributes = FileAttributes.Normal;
+                    File.Delete(file.FullName);
+                }
+                catch
+                {
+                }
         }
     }
 }

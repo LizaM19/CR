@@ -60,8 +60,10 @@
             this.ClientSize = new System.Drawing.Size(432, 443);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.richTextBox1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Graphs. Chromatic number";
             this.ResumeLayout(false);
 
